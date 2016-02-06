@@ -6,17 +6,15 @@
             <div>
                 <h1><a href="">Happy Tonya Happy People</a></h1>
             </div>
-
             <div>
-                <p>published: 06.02.2016, 14:40</p>
-                <h2><a href="">My first post here at last</a></h2>
-                <p>Love me, tender</p>
-            </div>
-
-            <div>
-                <p>published: 06.02.2016, 14:42</p>
-                <h2><a href="">My second post</a></h2>
-                <p> Love me sweet.</p>
+              {% for post in posts %}
+                <div>
+                  <p>published: {{ post.published_date }}</p>
+                  <h1><a href="">{{ post.title }}</a></h1>
+                  <p>{{ post.text|linebreaks }}</p>
+                </div>
+              {% endfor %}
+           
             </div>
         </body>
     </html>
